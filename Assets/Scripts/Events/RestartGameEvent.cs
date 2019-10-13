@@ -1,3 +1,3 @@
-﻿public class RestartGameEvent : AbstractSelfPublisher
+﻿public readonly struct RestartGameEvent
 {
 }

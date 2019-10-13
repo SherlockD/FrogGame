@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
+using UniRx;
 
 namespace Assets.Scripts.Game.MVC
 {
@@ -39,8 +40,6 @@ namespace Assets.Scripts.Game.MVC
             _gameModel.OnShakeCell += ShakeCell;
             _gameModel.OnShowWinScreen += ShowWinScreen;
             _gameModel.OnShowLoseScreen += ShowLoseScreen;
-
-            _loseScreenController.OnRestartGameClickCallback += () => new RestartGameEvent().PublishSelf();
         }
 
         private void DrawLevel(List<int> levelData)
@@ -102,7 +101,7 @@ namespace Assets.Scripts.Game.MVC
 
         private void ShowLoseScreen()
         {
-            Debug.LogError("LOSE!");
+            _loseScreenController.gameObject.SetActive(true);
         }
     }
 }

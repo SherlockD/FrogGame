@@ -24,12 +24,9 @@ namespace Assets.Scripts.Game.MVC
             _canStep = true;
         }
 
-        public void LoadLevel(int levelIndex)
+        public void LoadLevel()
         {
-            GameLevel gameLevel = GameManager.GetLevel(levelIndex);
-
-            if (levelIndex < 0 || gameLevel == null)
-                return;
+            GameLevel gameLevel = GameManager.GetCurrentLevel();
 
             _currentState = gameLevel.GetLevelData();
 

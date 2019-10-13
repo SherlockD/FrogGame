@@ -17,7 +17,7 @@ public class GameMediator : MonoBehaviour
 
         _gameView.Initialize();
 
-        _gameModel.LoadLevel(0);
+        _gameModel.LoadLevel();
     }
 
     private void Initialize()

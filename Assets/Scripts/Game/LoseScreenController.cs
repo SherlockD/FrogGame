@@ -1,18 +1,18 @@
 ﻿using System;
+using UniRx;
 using UnityEngine;
 
 public class LoseScreenController : MonoBehaviour
 {
-    public event Action OnMainMenuClickCallback;
-    public event Action OnRestartGameClickCallback;
-
     public void OnMainMenuButtonClick()
     {
-        OnMainMenuClickCallback?.Invoke();
+        MessageBroker.Default
+            .Publish(new LoadSceneEvent("MainMenu"));
     }
 
     public void OnRestartButtonClick()
     {
-        OnRestartGameClickCallback?.Invoke();
+        MessageBroker.Default
+            .Publish(new RestartGameEvent());
     }
 }

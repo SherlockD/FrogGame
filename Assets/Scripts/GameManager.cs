@@ -8,7 +8,9 @@ public class GameManager : MonoBehaviour
 
     private static GameManager _instance;
 
-    private int _currentLevelIndex;
+    private int _currentLevelIndex = 0;
+
+    private const string LAST_LEVEL_KEY = "last_level_key";
 
     private void Awake()
     {
@@ -18,11 +20,35 @@ public class GameManager : MonoBehaviour
             _instance = this;
     }
 
-    public static GameLevel GetLevel(int index)
+    public static GameLevel GetCurrentLevel()
     {
-        if (index >= _instance._levels.Count)
+        if (_instance._currentLevelIndex >= _instance._levels.Count)
             return null;
 
-        return _instance._levels[index];
+        PlayerPrefs.SetInt(LAST_LEVEL_KEY, _instance._currentLevelIndex);
+
+        return _instance._levels[_instance._currentLevelIndex];
+    }
+
+    public static void SetSaveLevel()
+    {
+        int index = PlayerPrefs.GetInt(LAST_LEVEL_KEY, 0);
+
+        if (index >= _instance._levels.Count)
+            return;
+
+        _instance._currentLevelIndex = index;
+    }
+
+    public static GameLevel GetNextLevel()
+    {
+        if (_instance._currentLevelIndex + 1 >= _instance._levels.Count)
+            return null;
+
+        _instance._currentLevelIndex++;
+
+        PlayerPrefs.SetInt(LAST_LEVEL_KEY, _instance._currentLevelIndex);
+
+        return _instance._levels[_instance._currentLevelIndex];
     }
 }

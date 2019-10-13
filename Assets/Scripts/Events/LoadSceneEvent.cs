@@ -1,4 +1,4 @@
-﻿public class LoadSceneEvent : AbstractSelfPublisher
+﻿public readonly struct LoadSceneEvent
 {
     public readonly string SceneName;
 

@@ -365,7 +365,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Chose level
+  m_Text: Choose level
 --- !u!222 &366135986
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -547,17 +547,17 @@ PrefabInstance:
     - target: {fileID: 4146923380593391235, guid: 432ee6a8c70c85d44a62f071b98f318d,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.1338851
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4146923380593391235, guid: 432ee6a8c70c85d44a62f071b98f318d,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.43530896
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4146923380593391235, guid: 432ee6a8c70c85d44a62f071b98f318d,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 95.666016
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4146923380593391235, guid: 432ee6a8c70c85d44a62f071b98f318d,
         type: 3}
@@ -650,6 +650,7 @@ GameObject:
   - component: {fileID: 1220008157}
   - component: {fileID: 1220008156}
   - component: {fileID: 1220008155}
+  - component: {fileID: 1220008159}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -738,6 +739,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1220008159
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1220008154}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55cf279de07507840bd15e637944311d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1271989906
 GameObject:
   m_ObjectHideFlags: 0
@@ -827,17 +840,17 @@ PrefabInstance:
     - target: {fileID: 6891941429349210775, guid: 34ce6504156543846834941aab9422df,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.503459
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6891941429349210775, guid: 34ce6504156543846834941aab9422df,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.14983386
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6891941429349210775, guid: 34ce6504156543846834941aab9422df,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 79.00781
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6891941429349210775, guid: 34ce6504156543846834941aab9422df,
         type: 3}
@@ -879,6 +892,35 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6891941429349210772, guid: 34ce6504156543846834941aab9422df,
+        type: 3}
+      propertyPath: _levels.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6891941429349210772, guid: 34ce6504156543846834941aab9422df,
+        type: 3}
+      propertyPath: _levels.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 59b06520db9527b41a92368c81650a93,
+        type: 2}
+    - target: {fileID: 6891941429349210772, guid: 34ce6504156543846834941aab9422df,
+        type: 3}
+      propertyPath: _levels.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: e02bd81a9f19a9548a091fdb5070d142,
+        type: 2}
+    - target: {fileID: 6891941429349210772, guid: 34ce6504156543846834941aab9422df,
+        type: 3}
+      propertyPath: _levels.Array.data[2]
+      value: 
+      objectReference: {fileID: 11400000, guid: 59b06520db9527b41a92368c81650a93,
+        type: 2}
+    - target: {fileID: 6891941429349210772, guid: 34ce6504156543846834941aab9422df,
+        type: 3}
+      propertyPath: _levels.Array.data[3]
+      value: 
+      objectReference: {fileID: 11400000, guid: 5f6f884ca7bf9524e8cb06659aca3033,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 34ce6504156543846834941aab9422df, type: 3}
 --- !u!1 &1601790000
@@ -1097,7 +1139,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1856373470}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1220008159}
+        m_MethodName: OnMainMenuStartButtonClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1856373470
@@ -1215,7 +1268,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1928758797}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1220008159}
+        m_MethodName: OnExitButtonClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1928758797
@@ -1268,7 +1332,7 @@ GameObject:
   - component: {fileID: 2040509738}
   - component: {fileID: 2040509737}
   m_Layer: 5
-  m_Name: ChoseLevelButton
+  m_Name: ChooseLevelButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
