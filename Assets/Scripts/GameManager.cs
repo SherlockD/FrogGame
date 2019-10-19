@@ -8,6 +8,9 @@ public class GameManager : MonoBehaviour
 
     private static GameManager _instance;
 
+    public static int LevelsCount => _instance._levels.Count;
+    public static bool IsLastLevel => _instance._currentLevelIndex == LevelsCount - 1;
+
     private int _currentLevelIndex = 0;
 
     private const string LAST_LEVEL_KEY = "last_level_key";
@@ -18,6 +21,11 @@ public class GameManager : MonoBehaviour
 
         if (_instance == null)
             _instance = this;
+    }
+
+    public static void SetCurrentLevel(int index)
+    {
+        _instance._currentLevelIndex = index;
     }
 
     public static GameLevel GetCurrentLevel()
@@ -40,15 +48,13 @@ public class GameManager : MonoBehaviour
         _instance._currentLevelIndex = index;
     }
 
-    public static GameLevel GetNextLevel()
+    public static void SetIndexToNextLevel()
     {
         if (_instance._currentLevelIndex + 1 >= _instance._levels.Count)
-            return null;
+            return;
 
         _instance._currentLevelIndex++;
 
         PlayerPrefs.SetInt(LAST_LEVEL_KEY, _instance._currentLevelIndex);
-
-        return _instance._levels[_instance._currentLevelIndex];
     }
 }

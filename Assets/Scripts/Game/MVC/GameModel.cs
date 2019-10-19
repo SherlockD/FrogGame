@@ -47,12 +47,12 @@ namespace Assets.Scripts.Game.MVC
             switch (chosenType)
             {
                 case MALE_FROG:
-                    if(chosenCellIndex + 1 >= _currentState.Count)
+                    if (chosenCellIndex + 1 >= _currentState.Count)
                     {
                         OnShakeCell?.Invoke(chosenCellIndex);
                         return;
                     }
-                    if(_currentState[chosenCellIndex + 1] == EMPTY)
+                    if (_currentState[chosenCellIndex + 1] == EMPTY)
                     {
                         OnMoveToFrom?.Invoke(chosenCellIndex, chosenCellIndex + 1);
                         return;
@@ -147,12 +147,12 @@ namespace Assets.Scripts.Game.MVC
 
         private bool CheckToLoose()
         {
-            for(int i = 0; i < _currentState.Count; i++)
+            for (int i = 0; i < _currentState.Count; i++)
             {
                 int chosenType = _currentState[i];
                 switch (chosenType)
                 {
-                    case MALE_FROG:             
+                    case MALE_FROG:
                         if (i + 1 >= _currentState.Count)
                             continue;
 

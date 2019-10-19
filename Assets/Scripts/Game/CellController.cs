@@ -6,10 +6,10 @@ public class CellController : MonoBehaviour, IPointerClickHandler
 {
     public FrogController FrogController { get; set; }
 
-    public event Action<CellController> OnPointerClockCallback;
+    public event Action<CellController> OnPointerClickCallback;
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        OnPointerClockCallback?.Invoke(this);
+        OnPointerClickCallback?.Invoke(this);
     }
 }

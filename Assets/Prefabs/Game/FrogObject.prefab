@@ -87,6 +87,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e36add2174e50946a74207ce94b269d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _male_frog_sprite: {fileID: 21300000, guid: 2a630b8c46f33994a9fb568ab02ad52b, type: 3}
-  _female_frog_sprite: {fileID: 21300000, guid: afb3e72854445e143ada2d46663db3f4,
-    type: 3}
+  _maleFrogSprite: {fileID: 21300000, guid: 2a630b8c46f33994a9fb568ab02ad52b, type: 3}
+  _femaleFrogSprite: {fileID: 21300000, guid: afb3e72854445e143ada2d46663db3f4, type: 3}

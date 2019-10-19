@@ -1,18 +1,10 @@
-﻿using System;
-using UniRx;
+﻿using UniRx;
 using UnityEngine;
 
-public class LoseScreenController : MonoBehaviour
+public class LoseScreenController : BaseGameScreenPanel
 {
-    public void OnMainMenuButtonClick()
+    public bool SetActive
     {
-        MessageBroker.Default
-            .Publish(new LoadSceneEvent("MainMenu"));
-    }
-
-    public void OnRestartButtonClick()
-    {
-        MessageBroker.Default
-            .Publish(new RestartGameEvent());
+        set => gameObject.SetActive(value);
     }
 }

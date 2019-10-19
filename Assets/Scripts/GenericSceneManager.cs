@@ -3,11 +3,11 @@ using UniRx;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class GenericSceneManager : AbstractSubscriberBehaviour
+public class GenericSceneManager : MonoBehaviour
 {
-    private new void Awake()
+    private void Awake()
     {
-        base.Awake();
+        Subscribe();
 
         DontDestroyOnLoad(this);
     }
@@ -27,7 +27,7 @@ public class GenericSceneManager : AbstractSubscriberBehaviour
         }
     }
 
-    public override void Subscribe()
+    public void Subscribe()
     {
         MessageBroker.Default
             .Receive<LoadSceneEvent>()

@@ -1,7 +1,6 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
-using UniRx;
 
 namespace Assets.Scripts.Game.MVC
 {
@@ -17,6 +16,7 @@ namespace Assets.Scripts.Game.MVC
 
         [Header("Screens")]
         [SerializeField] private LoseScreenController _loseScreenController;
+        [SerializeField] private WinScreenController _winScreenController;
 
         private GameModel _gameModel;
         private GameController _gameController;
@@ -47,7 +47,7 @@ namespace Assets.Scripts.Game.MVC
             levelData.ForEach((level) => 
             {
                 CellController newCell = Instantiate(_cellPrefab, _horizontalCellsGroup);
-                newCell.OnPointerClockCallback += OnCellClick;
+                newCell.OnPointerClickCallback += OnCellClick;
                 _spawnedCells.Add(newCell);
 
                 if (level == GameModel.EMPTY)
@@ -96,12 +96,12 @@ namespace Assets.Scripts.Game.MVC
 
         private void ShowWinScreen()
         {
-            Debug.LogError("WIN!");
+            _winScreenController.SetActive = true;
         }
 
         private void ShowLoseScreen()
         {
-            _loseScreenController.gameObject.SetActive(true);
+            _loseScreenController.SetActive = true;
         }
     }
 }
